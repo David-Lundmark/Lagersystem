@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.darksearch
+{
+    position: relative;
+    left: 70px;
+    bottom: 35px;
+    border: 1px solid #cccccc;
+    color: white;
+    background-color: #333333;
+}
