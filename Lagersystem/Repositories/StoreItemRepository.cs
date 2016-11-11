@@ -43,7 +43,7 @@ namespace Lagersystem.Repositories
 
         public StockItem GetItemById(int id)
         {
-            return context.Items.FirstOrDefault(i => i.ItemID == id);
+            return context.Items.First(i => i.ItemID == id);
         }
 
         public void DeleteItemById(int id)
@@ -61,7 +61,7 @@ namespace Lagersystem.Repositories
 
         public IEnumerable<StockItem> Search(string term)
         {
-            IEnumerable<StockItem> result = context.Items.Where(i => i.Name.Contains(term)).Select(i => i);
+            IEnumerable<StockItem> result = context.Items.Where(i => i.Name.Contains(term));
             return result;
         }
     }
