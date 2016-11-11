@@ -11,10 +11,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortBy = "Name", sortDesc = ViewBag.OrderSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Shelf)
+            @Html.ActionLink("Shelf", "Index", new { sortBy = "Shelf", sortDesc = ViewBag.OrderSortParm })
         </th>
         <th></th>
     </tr>

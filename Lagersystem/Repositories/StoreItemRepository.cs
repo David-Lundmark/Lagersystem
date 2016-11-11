@@ -64,5 +64,60 @@ namespace Lagersystem.Repositories
             IEnumerable<StockItem> result = context.Items.Where(i => i.Name.Contains(term));
             return result;
         }
+
+        public IEnumerable<StockItem> Sort(IEnumerable<StockItem> items, string sortBy = "name", bool sortDesc = false)
+        {
+            switch (sortBy.ToLowerInvariant())
+            {
+                case "name":
+                    if (sortDesc)
+                    {
+                        items = items.OrderByDescending(i => i.Name);
+                    }
+                    else
+                    {
+                        items = items.OrderBy(i => i.Name);
+                    }
+                    break;
+
+                case "price":
+                    if (sortDesc)
+                    {
+                        items = items.OrderByDescending(i => i.Price);
+                    }
+                    else
+                    {
+                        items = items.OrderBy(i => i.Price);
+                    }
+                    break;
+
+                case "shelf":
+                    if (sortDesc)
+                    {
+                        items = items.OrderByDescending(i => i.Shelf);
+                    }
+                    else
+                    {
+                        items = items.OrderBy(i => i.Shelf);
+                    }
+                    break;
+
+                case "description":
+                    if (sortDesc)
+                    {
+                        items = items.OrderByDescending(i => i.Description);
+                    }
+                    else
+                    {
+                        items = items.OrderBy(i => i.Description);
+                    }
+                    break;
+
+                default:
+                    throw new NotImplementedException();
+            }
+
+            return items;
+        }
     }
 }
